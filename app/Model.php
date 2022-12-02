@@ -20,8 +20,14 @@ abstract class Model{
         $this->_connexion = null;
 
         try{
-            $this->_connexion = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->_connexion = new PDO("mysql:host=:host;dbname=:db_name, :username, :password");
             $this->_connexion->exec("set names utf8");
+
+            $sth = $dbh->prepare('mysql:host=:host;dbname=:db_name, :username, :passwor');
+            $sth->bindValue('host', $this->host, PDO::PARAM_STR)    ;
+            /* Les noms peuvent aussi être préfixés par des deux-points ":" (facultatif) */
+            $sth->bindValue(':couleur', $couleur, PDO::PARAM_STR);
+            $sth->execute();
         }catch(PDOException $exception){
             echo "Erreur de connexion : " . $exception->getMessage();
         }

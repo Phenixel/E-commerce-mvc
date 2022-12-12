@@ -3,7 +3,7 @@
 class User extends Model{
     public function __construct()
     {
-        $this->table = "User";
+        $this->table = "Users";
         $this->getConnection();
     }
 

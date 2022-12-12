@@ -1,7 +1,8 @@
 <?php
 
 abstract class Model{
-    private string $host = "localhost:3355";
+//    private string $host = "localhost:3355";
+    private string $host = "localhost:3306";
     private string $db_name = "test";
     private string $username = "root";
     private string $password = "root";

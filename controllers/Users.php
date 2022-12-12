@@ -9,10 +9,8 @@ class Users extends Controller {
     public function index(){
         $this->loadModel('User');
 
-        $users = $this->loadModel('User')->getAll();
+        $users = $this->User->getAll();
 
         $this->render('index', compact('users'));
-
-//        phpinfo();
     }
 }

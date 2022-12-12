@@ -36,6 +36,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Liste des articles</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="">Liste des users</a>
+                </li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -43,6 +46,7 @@
             </form>
         </div>
             <a class="pannier" href="#"><i class="fa fa-cart-shopping"></i></a>
+            <a class="user" href="#"><i class="fa fa-solid fa-user"></i></a>
     </div>
 </nav>
 

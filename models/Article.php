@@ -27,4 +27,12 @@ class Article extends Model{
 //        return $query->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getThreeArticles(){
+        $this->getConnection();
+        $stmt = $this->_connexion->prepare("SELECT * FROM article LIMIT 3");
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 }

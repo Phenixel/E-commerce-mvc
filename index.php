@@ -1,5 +1,6 @@
 <?php
 define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
+define('BASE_DIR', dirname(__FILE__));
 
 require_once(ROOT.'app/Model.php');
 require_once(ROOT.'app/Controller.php');

@@ -9,7 +9,7 @@ class Articles extends Controller{
     public function index(){
         $this->loadModel('Article');
 
-        $articles = $this->getAll();
+        $articles = $this->Article->getAll();
 
         $this->render('index', compact('articles'));
     }
@@ -20,9 +20,9 @@ class Articles extends Controller{
      * @param string $slug
      * @return void
      */
-    public function lire(string $slug){
+    public function details(string $slug){
         $this->loadModel('Article');
-        $article = $this->findBySlug($slug);
-        $this->render('lire', compact('article'));
+        $article = $this->Article->findBySlug($slug);
+        $this->render('details', compact('article'));
     }
 }

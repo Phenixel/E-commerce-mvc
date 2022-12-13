@@ -8,6 +8,13 @@ body{
     height: 40px;
 }
 
+.ico_nav{
+    margin: 10px;
+}
+.user{
+    margin-left: 2%;
+}
+
 .hero-div{
     align-items: center;
 }
@@ -49,10 +56,6 @@ body{
     background-color: #00002d;
 }
 
-.pannier{
-    margin-left: 2%;
-}
-
 /* Accueil */
 .content-index{
     text-align: center;
@@ -65,6 +68,23 @@ body{
 .carousel-content{
     margin: 30px 15% 0 15%;
     box-shadow: rgba(169, 169, 169, 0.5) 0 0 10px 1px;
+}
+
+/* Liste articles */
+.all-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    margin: 30px;
+    transition: 0.3s;
+}
+.card:hover{
+    transform: translate(-10px, -10px);
+    box-shadow: #004da3 10px 10px 0 0;
+    transition: 0.3s;
 }
 
 /* Cookies */

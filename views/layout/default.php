@@ -7,7 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="staticfiles/medias/Favicon.png">
 
-    <title>Accueil</title>
+    <title><?php
+        if ($_GET["p"] != ""){
+            echo ucfirst($_GET["p"]) . " | Samsung";
+        }
+        else
+            echo "Bienvenu sur Samsung"
+            ?>
+    </title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="staticfiles/css/style.css">
@@ -27,17 +34,17 @@
 </header>
 <nav class="navbar navbar-expand-lg bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="<?php echo BASE_DIR ?>"><img class="logo_nav" src="staticfiles/medias/Samsung-Logo.png" alt="Logo samsung"></a>
+        <a class="navbar-brand" href="<?= BASE_DIR ?>"><img class="logo_nav" src="staticfiles/medias/Samsung-Logo.png" alt="Logo samsung"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Liste des articles</a>
+                    <a class="nav-link <?php if($_GET["p"] == "articles") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/articles">Liste des articles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="">Liste des users</a>
+                    <a class="nav-link <?php if($_GET["p"] == "users") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/users">Liste des users</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -45,8 +52,8 @@
                 <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
         </div>
-            <a class="pannier" href="#"><i class="fa fa-cart-shopping"></i></a>
-            <a class="user" href="#"><i class="fa fa-solid fa-user"></i></a>
+        <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
+        <a class="pannier ico_nav" href="#"><i class="fa fa-cart-shopping"></i></a>
     </div>
 </nav>
 

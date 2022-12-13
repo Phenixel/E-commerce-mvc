@@ -1,8 +1,8 @@
 <?php
 
 abstract class Model{
-//    private string $host = "localhost:3355";
-    private string $host = "localhost:3306";
+    private string $host = "localhost:3355";
+//    private string $host = "localhost:3306";
     private string $db_name = "test";
     private string $username = "root";
     private string $password = "root";
@@ -27,6 +27,7 @@ abstract class Model{
         try{
             $this->_connexion = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
             $this->_connexion->exec("set names utf8");
+            $this->_connexion->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
         }catch(PDOException $exception){
             echo "Erreur de connexion : " . $exception->getMessage();
         }

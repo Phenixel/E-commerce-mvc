@@ -1,6 +1,6 @@
 <?php
 define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
-define('BASE_DIR', dirname(__FILE__));
+define('BASE_DIR', dirname("index.php"));
 
 require_once(ROOT.'app/Model.php');
 require_once(ROOT.'app/Controller.php');
@@ -22,7 +22,7 @@ if($params[0] != ""){
         $controller->$action();
     }else{
         http_response_code(404);
-        echo "La page recherchée n'existe pas";
+        require_once(ROOT.'controllers/Main.php');
     }
 }else{
     require_once(ROOT.'controllers/Main.php');

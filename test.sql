@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db:3306
--- Généré le : mar. 13 déc. 2022 à 17:40
+-- Généré le : jeu. 15 déc. 2022 à 20:36
 -- Version du serveur : 5.7.37
 -- Version de PHP : 8.0.15
 
@@ -32,19 +32,21 @@ CREATE TABLE `article` (
   `slug` varchar(250) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,
   `content` varchar(255) DEFAULT NULL,
-  `images` varchar(250) NOT NULL
+  `images` varchar(250) NOT NULL,
+  `prix` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `article`
 --
 
-INSERT INTO `article` (`id`, `slug`, `nom`, `content`, `images`) VALUES
-(1, 'galaxy_flip', 'Galaxy flip', 'Bonjour je suis un super téléphone', 'staticfiles/medias/articles/Galaxy_flip.webp'),
-(2, 'galaxy_fold', 'Galaxy Fold', 'Hello je suis une desc', 'staticfiles/medias/articles/Galaxy_fold.webp'),
-(3, 'galaxy_s22', 'Galaxy S22', 'Hello je suis une desc', 'staticfiles/medias/articles/Galaxy_S22.webp'),
-(4, 'galaxy_s22_ultra', 'Galaxy S22 Ultra', 'Hello je suis une desc', 'staticfiles/medias/articles/Galaxy_S22_ultra.webp'),
-(5, 'galaxy_s22_v2', 'Galaxy S22 v2', 'Hello je suis une desc', 'staticfiles/medias/articles/Galaxy_S22.webp');
+INSERT INTO `article` (`id`, `slug`, `nom`, `content`, `images`, `prix`) VALUES
+(1, 'galaxy_flip', 'Galaxy flip', 'Bonjour je suis un super téléphone', 'staticfiles/medias/articles/Galaxy_flip.webp', 1050),
+(2, 'galaxy_fold', 'Galaxy Fold', 'Bien mieux qu\'un iphone', 'staticfiles/medias/articles/Galaxy_fold.webp', 1545),
+(3, 'galaxy_s22', 'Galaxy S22', 'Hello je suis une desc', 'staticfiles/medias/articles/Galaxy_S22.webp', 834),
+(4, 'galaxy_s22_ultra', 'Galaxy S22 Ultra', 'Hello je suis une desc', 'staticfiles/medias/articles/Galaxy_S22_ultra.webp', 1005),
+(5, 'galaxy_s22_v2', 'Galaxy S22 v2', 'Hello je suis une desc', 'staticfiles/medias/articles/Galaxy_S22.webp', 834),
+(6, 'galaxy_book2_pro', 'Galaxy Book2 Pro 360', 'Le meilleur pc du monde', 'staticfiles/medias/articles/galaxy_book2.webp', 1500);
 
 -- --------------------------------------------------------
 
@@ -110,7 +112,7 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `pannier`

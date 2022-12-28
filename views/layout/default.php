@@ -34,7 +34,7 @@
 </header>
 <nav class="navbar navbar-expand-lg bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="<?= BASE_DIR ?>"><img class="logo_nav" src="staticfiles/medias/Samsung-Logo.png" alt="Logo samsung"></a>
+        <a class="navbar-brand" href="<?= BASE_DIR ?>"><img class="logo_nav" src="<?= BASE_DIR ?>/staticfiles/medias/Samsung-Logo.png" alt="Logo samsung"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,7 +53,7 @@
             </form>
         </div>
         <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
-        <a class="pannier ico_nav" href="#"><i class="fa fa-cart-shopping"></i></a>
+        <a class="pannier ico_nav" href="<?= BASE_DIR ?>/pannier"><i class="fa fa-cart-shopping"></i></a>
     </div>
 </nav>
 

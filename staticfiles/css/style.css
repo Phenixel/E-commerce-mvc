@@ -125,6 +125,13 @@ body{
 .btn-add-cart{
     width: 80%;
 }
+.beauty-card{
+    transition: 0.3s;
+}
+.beauty-card:hover{
+    transform: translate(3px, -3px);
+    transition: 0.3s;
+}
 
 @media only screen and (max-width: 1100px) {
     .div-content-text{

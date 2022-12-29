@@ -1,9 +1,8 @@
 <?php
 
-class Pannier extends Controller {
-
+class Panier extends Controller {
     public function index(){
-        $this->loadModel('Pannier');
+        $this->loadModel('Panier');
         $this->render('index');
     }
 

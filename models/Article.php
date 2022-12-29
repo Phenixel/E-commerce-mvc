@@ -20,11 +20,6 @@ class Article extends Model{
         $stmt->execute();
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
-
-//        $sql = "SELECT * FROM ".$this->table." WHERE `slug`='".$slug."'";
-//        $query = $this->_connexion->prepare($sql);
-//        $query->execute();
-//        return $query->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getThreeArticles(){

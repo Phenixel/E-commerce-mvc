@@ -53,7 +53,7 @@
             </form>
         </div>
         <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
-        <a class="pannier ico_nav" href="<?= BASE_DIR ?>/pannier"><i class="fa fa-cart-shopping"></i></a>
+        <a class="pannier ico_nav" href="<?= BASE_DIR ?>/panier"><i class="fa fa-cart-shopping"></i></a>
     </div>
 </nav>
 

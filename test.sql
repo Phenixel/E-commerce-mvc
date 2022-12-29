@@ -51,10 +51,10 @@ INSERT INTO `article` (`id`, `slug`, `nom`, `content`, `images`, `prix`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pannier`
+-- Structure de la table `panier`
 --
 
-CREATE TABLE `pannier` (
+CREATE TABLE `panier` (
   `id` int(11) NOT NULL,
   `id_article` int(11) NOT NULL,
   `quantite` int(11) NOT NULL

@@ -31,7 +31,7 @@ if(!isset($_SESSION['cart'])){
 <script>
     function addToCart(articleId){
         $.ajax({
-            url: '<?= BASE_DIR ?>/views/panier/add-to-cart.php',
+            url: '<?= BASE_DIR ?>/views/paniers/add-to-cart.php',
             type: 'POST',
             data: {
                 articleId: articleId

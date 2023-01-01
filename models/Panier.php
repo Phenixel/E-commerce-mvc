@@ -8,7 +8,7 @@ class Panier extends Model{
         $this->getConnection();
     }
 
-    public function getThreeArticles(){
+    public function getCartArticles(){
         $this->getConnection();
         $stmt = $this->_connexion->prepare("SELECT * FROM article WHERE id IN (".implode(',',$_SESSION['cart']).")");
         $stmt->execute();

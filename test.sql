@@ -32,7 +32,7 @@ CREATE TABLE `article` (
   `slug` varchar(250) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,
   `content` varchar(255) DEFAULT NULL,
-  `description` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `description` varchar(500) NOT NULL,
   `images` varchar(250) NOT NULL,
   `prix` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

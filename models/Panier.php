@@ -9,10 +9,13 @@ class Panier extends Model{
     }
 
     public function getCartArticles(){
+        $ids = array_keys($_SESSION['cart']);
+        $idsString = implode(',', $ids);
+
         $this->getConnection();
-        $stmt = $this->_connexion->prepare("SELECT * FROM article WHERE id IN (".implode(',',$_SESSION['cart']).")");
+        $stmt = $this->_connexion->prepare("SELECT * FROM article WHERE id IN (". $idsString .")");
         $stmt->execute();
 
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

@@ -1,9 +1,13 @@
 <?php
 session_start();
 
-if(isset($_POST['articleId'])){
+if(isset($_POST['articleId']) && isset($_POST['quantite'])){
     $articleId = $_POST['articleId'];
-    if(!in_array($articleId, $_SESSION['cart'])){
-        array_push($_SESSION['cart'], $articleId);
+    $quantite = $_POST['quantite'];
+
+    if(!isset($_SESSION['cart'][$articleId])){
+        $_SESSION['cart'][$articleId] = ['quantite' => $quantite];
+    } else {
+        $_SESSION['cart'][$articleId]['quantite'] += $quantite;
     }
 }

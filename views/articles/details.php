@@ -4,7 +4,7 @@ if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = array();
 }
 
-
+var_dump($_SESSION['cart']);
 ?>
 
 <div class="content">
@@ -14,7 +14,10 @@ if(!isset($_SESSION['cart'])){
                 <img class="img-fluid m-5" src="<?= BASE_DIR ?>/<?= $article['images'] ?>" alt="image article <?= $article['nom'] ?>">
             </div>
             <div class="text-center mt-3">
-                <button type="button" class="btn btn-primary btn-add-cart" onclick="addToCart(<?= $article['id'] ?>)">Ajouter au panier <i class="fa fa-cart-shopping"></i></button>
+                <div class="btn-group" role="group" aria-label="Quantité">
+                    <button type="button" class="btn btn-primary btn-add-cart" onclick="addToCart(<?= $article['id'] ?>)">Ajouter au panier <i class="fa fa-cart-shopping"></i></button>
+                    <input value="1" min="1" type="number" name="quantite" id="quantite" class="form-control form-control-sm" style="width: 40%;">
+                </div>
             </div>
         </div>
         <div class="col-lg-8">
@@ -34,7 +37,8 @@ if(!isset($_SESSION['cart'])){
             url: '<?= BASE_DIR ?>/views/paniers/add-to-cart.php',
             type: 'POST',
             data: {
-                articleId: articleId
+                articleId: articleId,
+                quantite: $('#quantite').val()
             },
             success: function(response){
                 alert('Article ajouté au panier !');

@@ -1,8 +1,3 @@
-<?php
-//session_start();
-
-?>
-
 <main class="content">
     <h1 class="display-1 h1 text-center">Panier</h1>
     <hr class="mb-5">

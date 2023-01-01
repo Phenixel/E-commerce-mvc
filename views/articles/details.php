@@ -4,7 +4,6 @@ if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = array();
 }
 
-var_dump($_SESSION['cart']);
 ?>
 
 <div class="content">

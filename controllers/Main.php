@@ -12,4 +12,8 @@ class Main extends Controller{
 //        $this->render('index');
     }
 
+    public function cgv(){
+        $this->render('cgv');
+    }
+
 }

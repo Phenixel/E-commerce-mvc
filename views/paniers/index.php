@@ -70,7 +70,7 @@ $prixTotal = 0;
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='<?= BASE_DIR ?>/paniers/delete/<?= $article['id'] ?>'">Confirmer <i class="fa fa-cart-shopping"></i></button>
+                <button type="button" class="btn btn-danger" onclick="location.href='<?= BASE_DIR ?>/paniers/delete/<?= $article['id'] ?>'">Confirmer <i class="fa-regular fa-trash-can"></i></button>
             </div>
         </div>
     </div>

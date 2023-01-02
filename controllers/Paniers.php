@@ -22,7 +22,7 @@ class Paniers extends Controller {
 
         $check = $this->Panier->getCartArticles();
 
-        $this->render('index', compact("check"));
+        $this->render('checkout', compact("check"));
     }
 
     public function delete(int $id){

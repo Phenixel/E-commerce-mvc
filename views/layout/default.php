@@ -47,11 +47,8 @@
                     <a class="nav-link <?php if($_GET["p"] == "users") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/users">Liste des users</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary" type="submit">Search</button>
-            </form>
         </div>
+        <button class="btn btn-primary">Se connecter</button>
         <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
         <a class="pannier ico_nav" href="<?= BASE_DIR ?>/paniers"><i class="fa fa-cart-shopping"></i></a>
     </div>
@@ -63,9 +60,7 @@
 
 <footer class="py-3 footer">
     <ul class="nav justify-content-center pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Accueil</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Liste des articles</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">CGV</a></li>
+        <li class="nav-item"><a href="<?= BASE_DIR ?>/main/cgv" class="nav-link px-2 text-muted">CGV</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">CGU</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">A propos</a></li>
     </ul>

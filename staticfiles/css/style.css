@@ -49,6 +49,9 @@ body{
     background-color: white;
     cursor: default;
 }
+.content-txt-paragraphe:hover ~ .content-txt-paragraphe:not(:hover){
+    color: red;
+}
 
 .header{
     display: flex;
@@ -121,7 +124,6 @@ body{
     transition: 0.3s;
 }
 
-/* Liste des articles */
 .video-container {
     position: relative;
 }

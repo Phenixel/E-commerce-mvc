@@ -49,7 +49,7 @@ $prixTotal = 0;
 </main>
 
 <!-- Confirmation -->
-<div class="modal fade" id="idConfirmDelete" tabindex="-1" aria-labelledby="confirmDelete" aria-hidden="true">
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="idConfirmDelete" tabindex="-1" aria-labelledby="confirmDelete" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">

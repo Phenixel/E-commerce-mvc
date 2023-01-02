@@ -16,4 +16,7 @@ class Main extends Controller{
         $this->render('cgv');
     }
 
+    public function cgu(){
+        $this->render('cgu');
+    }
 }

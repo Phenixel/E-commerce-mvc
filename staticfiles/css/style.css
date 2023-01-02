@@ -137,6 +137,12 @@ body{
     margin-top: 11%;
     margin-left: 7%;
 }
+.h3-lst_articles{
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 11%;
+    margin-left: 7%;
+}
 
 @media only screen and (max-width: 1100px) {
     .h1-lst_articles{

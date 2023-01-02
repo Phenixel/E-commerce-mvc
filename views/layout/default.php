@@ -61,7 +61,7 @@
 <footer class="py-3 footer">
     <ul class="nav justify-content-center pb-3 mb-3">
         <li class="nav-item"><a href="<?= BASE_DIR ?>/main/cgv" class="nav-link px-2 text-muted">CGV</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">CGU</a></li>
+        <li class="nav-item"><a href="<?= BASE_DIR ?>/main/cgu" class="nav-link px-2 text-muted">CGU</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">A propos</a></li>
     </ul>
     <p class="text-center text-muted">&copy;Copyright Phenixel <?php echo date("Y"); ?></p>

@@ -39,7 +39,7 @@ $prixTotal = 0;
     <?php
     if(isset($_SESSION['cart'])){
         $_SESSION['cart'] = array();
-        echo "votre panier a bien été réinitialiser";
+        echo "votre panier a bien été réinitialisé";
     }
     ?>
 </main>

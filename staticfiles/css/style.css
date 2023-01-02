@@ -2,6 +2,7 @@
 
 body{
     background-image: linear-gradient(#fcfcfc, #edf4ff);
+    min-height: 100vh;
 }
 
 .logo_nav{
@@ -54,6 +55,9 @@ body{
 
 .footer{
     background-color: #00002d;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
 }
 
 /* Accueil */

@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 class Panier extends Model{
 
@@ -14,6 +13,8 @@ class Panier extends Model{
 
         $this->getConnection();
         $stmt = $this->_connexion->prepare("SELECT * FROM article WHERE id IN (". $idsString .")");
+//        $stmt = $this->_connexion->prepare('SELECT * FROM article WHERE id IN (:idsString)');
+//        $stmt->bindValue(':idsString', $idsString, PDO::PARAM_STR);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

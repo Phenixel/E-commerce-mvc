@@ -14,7 +14,7 @@ if(!isset($_SESSION['cart'])){
             </div>
             <div class="text-center mt-3">
                 <div class="btn-group" role="group" aria-label="Quantité">
-                    <button type="button" class="btn btn-primary btn-add-cart" onclick="addToCart(<?= $article['id'] ?>)">Ajouter au panier <i class="fa fa-cart-shopping"></i></button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#idAddToCart" onclick="prepareConfirm($('#quantite').val())">Ajouter au panier <i class="fa fa-cart-shopping"></i></button>
                     <input value="1" min="1" type="number" name="quantite" id="quantite" class="form-control form-control-sm" style="width: 40%;">
                 </div>
             </div>
@@ -30,7 +30,44 @@ if(!isset($_SESSION['cart'])){
     </div>
 </div>
 
+<!-- Confirmation -->
+<div class="modal fade" id="idAddToCart" tabindex="-1" aria-labelledby="addToCart" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addToCart">Confirmer l'ajout au panier ?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="<?= BASE_DIR ?>/<?= $article['images'] ?>" alt="image article <?= $article['nom'] ?>">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="h1"><?= $article['nom'] ?></h1>
+                        <h5>Quantité : <span id="quantite-affichage"></span></h5>
+                        <h4 id="prix-total"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" onclick="addToCart(<?= $article['id'] ?>)">Confirmer <i class="fa fa-cart-shopping"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
+    function prepareConfirm(quantite) {
+        $('#quantite-affichage').text(quantite);
+
+        const prix = <?= $article['prix'] ?>;
+        const prixTotal = quantite * prix;
+        $('#prix-total').text(prixTotal + " €");
+    }
+
     function addToCart(articleId){
         $.ajax({
             url: '<?= BASE_DIR ?>/views/paniers/add-to-cart.php',
@@ -40,7 +77,17 @@ if(!isset($_SESSION['cart'])){
                 quantite: $('#quantite').val()
             },
             success: function(response){
-                alert('Article ajouté au panier !');
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Article ajouté',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                setTimeout(function() {
+                    window.location.replace("<?= BASE_DIR ?>/paniers");
+                }, 1200);
+
             }
         });
     }

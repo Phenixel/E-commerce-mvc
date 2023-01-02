@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Paniers extends Controller {
     /**
@@ -7,11 +8,25 @@ class Paniers extends Controller {
      * @return void
      */
     public function index(){
+        if (!empty($_SESSION['cart'])){
+            $this->loadModel('Panier');
+            $panier = $this->Panier->getCartArticles();
+            $this->render('index', compact("panier"));
+        } else {
+            $this->render('index');
+        }
+    }
+
+    public function checkout(){
         $this->loadModel('Panier');
 
-        $panier = $this->Panier->getCartArticles();
+        $check = $this->Panier->getCartArticles();
 
-        $this->render('index', compact("panier"));
+        $this->render('index', compact("check"));
+    }
+
+    public function delete(int $id){
+        $this->render('delete', compact("id"));
     }
 
 }

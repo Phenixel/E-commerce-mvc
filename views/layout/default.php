@@ -50,7 +50,16 @@
         </div>
         <button class="btn btn-primary">Se connecter</button>
         <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
-        <a class="pannier ico_nav" href="<?= BASE_DIR ?>/paniers"><i class="fa fa-cart-shopping"></i></a>
+        <a class="pannier ico_nav position-relative" href="<?= BASE_DIR ?>/paniers">
+            <i class="fa fa-cart-shopping"></i>
+            <?php if (count($_SESSION['cart']) != 0 ): ?>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <?php
+                    echo count($_SESSION['cart']);
+                ?>
+            <span class="visually-hidden">Article dans le panier</span>
+            <?php endif; ?>
+        </a>
     </div>
 </nav>
 

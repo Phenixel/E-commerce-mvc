@@ -1,5 +1,6 @@
 <?php
 include "options.php";
+session_start();
 
 define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 const BASE_DIR = base_dir;

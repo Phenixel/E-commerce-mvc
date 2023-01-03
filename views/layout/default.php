@@ -43,13 +43,16 @@
                 <li class="nav-item">
                     <a class="nav-link <?php if($_GET["p"] == "articles") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/articles">Liste des articles</a>
                 </li>
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']["power"] == "admin"): ?>
                 <li class="nav-item">
                     <a class="nav-link <?php if($_GET["p"] == "users") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/users">Liste des users</a>
                 </li>
+                <?php endif; ?>
             </ul>
         </div>
         <?php if (isset($_SESSION['user'])): ?>
             <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
+            <a class="user ico_nav" href="<?= BASE_DIR ?>/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
         <?php else: ?>
             <a type="button" class="btn btn-primary" href="<?= BASE_DIR ?>/users/login">Se connecter</a>
         <?php endif; ?>

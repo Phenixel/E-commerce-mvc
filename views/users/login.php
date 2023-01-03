@@ -1,7 +1,7 @@
 <div class="content p-5" style="width: 40%">
     <h1 class="h1 text-center">Connectez-vous</h1>
 
-    <form class="form mt-4" method="POST" action="<?= BASE_DIR ?>/users/testLogin">
+    <form class="form mt-4" method="POST" action="<?= BASE_DIR ?>/users/login">
         <div class="form-group mb-4">
             <label for="inputEmail" class="text-right">Adresse email</label>
             <input type="email" class="form-control mt-2" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Entrez votre email">
@@ -20,7 +20,9 @@
         <div class="d-flex">
             <button type="submit" class="btn btn-primary mt-4 ms-auto">Se connecter</button>
         </div>
-        <?= $error ?>
+        <?php if (isset($error)): ?>
+            <p class="p text-danger"><?= $error ?></p>
+        <?php endif; ?>
     </form>
 
 </div>

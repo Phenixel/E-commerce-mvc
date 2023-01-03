@@ -45,7 +45,7 @@
         <video id="video_bg" class="video-player img-fluid" autoplay disableremoteplayback="" style="width: 100%; height: 100%;" spellcheck="false" muted>
             <source src="<?= BASE_DIR ?>/staticfiles/medias/image_fond_fold.webm" type="video/mp4">
         </video>
-        <h3 class="video-overlay h3-lst_articles">Découvrez nos articles <br> directement dans notre boutique</h3>
+        <h3 class="video-overlay h3-lst_articles">Découvrez nos articles <br> directement dans <br> notre boutique</h3>
     </div>
     <div class="content-index">
         <a href="<?= BASE_DIR ?>/articles" type="button" class="btn btn-primary m-5">Allez à la boutique</a>

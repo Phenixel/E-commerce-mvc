@@ -51,7 +51,9 @@
             </ul>
         </div>
         <?php if (isset($_SESSION['user'])): ?>
-            <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
+            <button type="button" class="btn btn-primary" id="btn-user-infos" data-bs-container="body" data-bs-toggle="popover" data-bs-title="Vos informations" data-bs-placement="bottom" data-bs-content="Nom : <?= $_SESSION['user']["name"] ?> | Mail : <?= $_SESSION['user']["email"] ?>">
+                <i class="fa fa-solid fa-user"></i>
+            </button>
             <a class="user ico_nav" href="<?= BASE_DIR ?>/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
         <?php else: ?>
             <a type="button" class="btn btn-primary" href="<?= BASE_DIR ?>/users/login">Se connecter</a>

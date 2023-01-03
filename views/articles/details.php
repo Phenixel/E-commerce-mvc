@@ -1,10 +1,3 @@
-<?php
-if(!isset($_SESSION['cart'])){
-    $_SESSION['cart'] = array();
-}
-
-?>
-
 <div class="content">
     <div class="row justify-content-center">
         <div class="col-md-7 col-lg-4 mb-5 mb-lg-0">

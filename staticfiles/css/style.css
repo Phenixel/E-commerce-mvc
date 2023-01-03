@@ -21,7 +21,8 @@ body{
 }
 
 .content{
-    margin: 50px;
+    margin: 50px auto 50px auto;
+    width: 80%;
     padding: 2%;
     background-color: #f4f4f4;
     border-radius: 5px;
@@ -199,3 +200,4 @@ body{
     --bs-btn-disabled-border-color: #004da3;
 }
 
+/* Login */

@@ -2,13 +2,20 @@
 include "options.php";
 session_start();
 
+// Variable qui contiendra le panier
+if(!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = array();
+}
+
+// Variable qui indique le fichier source
 define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 const BASE_DIR = base_dir;
 
-
+// Requirements
 require_once(ROOT.'app/Model.php');
 require_once(ROOT.'app/Controller.php');
 
+// Récupération des paramétres de l'URL
 $params = explode('/', $_GET['p']);
 
 if($params[0] != ""){

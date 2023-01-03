@@ -29,7 +29,7 @@
         <h6>Ce site est évidement fake</h6>
     </div>
     <div class="close-ban">
-        <i class="fas fa-duotone fa-circle-xmark" id="close-ban-x"></i>
+        <button type="button" class="btn-close btn-close-white" aria-label="Close" id="close-ban-x"></button>
     </div>
 </header>
 <nav class="navbar navbar-expand-lg bg-light sticky-top">
@@ -48,8 +48,11 @@
                 </li>
             </ul>
         </div>
-        <button class="btn btn-primary">Se connecter</button>
-        <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
+        <?php if (isset($_SESSION['user'])): ?>
+            <a class="user ico_nav" href="#"><i class="fa fa-solid fa-user"></i></a>
+        <?php else: ?>
+            <a type="button" class="btn btn-primary" href="<?= BASE_DIR ?>/users/login">Se connecter</a>
+        <?php endif; ?>
         <a class="pannier ico_nav position-relative" href="<?= BASE_DIR ?>/paniers">
             <i class="fa fa-cart-shopping"></i>
             <?php if (count($_SESSION['cart']) != 0 ): ?>

@@ -27,7 +27,10 @@ $prixTotal = 0;
         </table>
 
         <div class="d-flex">
-            <h4 class="h4 ms-auto"><?= $prixTotal ?>,00 € (TTC)</h4>
+            <div class="prix ms-auto">
+                <h4 class="h4 text-right" style="text-align: right"><?= $prixTotal ?>,00 € (HT)</h4>
+                <h4 class="h4 text-right"><?= $prixTotal * 1.2 ?>,00 € (TTC)</h4>
+            </div>
         </div>
     <?php else: ?>
         <div class="text-center">

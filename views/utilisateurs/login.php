@@ -1,7 +1,7 @@
 <div class="content p-5" style="width: 40%">
     <h1 class="h1 text-center">Connectez-vous</h1>
 
-    <form class="form mt-4" method="POST" action="<?= BASE_DIR ?>/users/login">
+    <form class="form mt-4" method="POST" action="<?= BASE_DIR ?>/utilisateurs/login">
         <div class="form-group mb-4">
             <label for="inputEmail" class="text-right">Adresse email</label>
             <input type="email" class="form-control mt-2" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Entrez votre email">

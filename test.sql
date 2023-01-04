@@ -64,10 +64,10 @@ CREATE TABLE `pannier` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Users`
+-- Structure de la table `Utilisateurs`
 --
 
-CREATE TABLE `Users` (
+CREATE TABLE `Utilisateurs` (
   `id` int NOT NULL,
   `name` varchar(250) DEFAULT NULL,
   `email` varchar(250) DEFAULT NULL,
@@ -75,10 +75,10 @@ CREATE TABLE `Users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `Users`
+-- Déchargement des données de la table `Utilisateurs`
 --
 
-INSERT INTO `Users` (`id`, `name`, `email`, `password`) VALUES
+INSERT INTO `Utilisateurs` (`id`, `name`, `email`, `password`) VALUES
 (1, 'phen', 'phen@phen.fr', 'Azerty123'),
 (2, 'aaron', 'astico@wanadoo.fr', 'Azerty123'),
 (3, 'demo', 'demo@demo.fr', 'demo');

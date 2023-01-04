@@ -45,7 +45,7 @@
                 </li>
                 <?php if (isset($_SESSION['user']) && $_SESSION['user']["power"] == "admin"): ?>
                 <li class="nav-item">
-                    <a class="nav-link <?php if($_GET["p"] == "users") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/users">Liste des users</a>
+                    <a class="nav-link <?php if($_GET["p"] == "utilisateurs") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/utilisateurs">Liste des utilisateurs</a>
                 </li>
                 <?php endif; ?>
             </ul>
@@ -54,9 +54,9 @@
             <button type="button" class="btn btn-primary" id="btn-user-infos" data-bs-container="body" data-bs-toggle="popover" data-bs-title="Vos informations" data-bs-placement="bottom" data-bs-content="Nom : <?= $_SESSION['user']["name"] ?> | Mail : <?= $_SESSION['user']["email"] ?>">
                 <i class="fa fa-solid fa-user"></i>
             </button>
-            <a class="user ico_nav" href="<?= BASE_DIR ?>/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <a class="user ico_nav" href="<?= BASE_DIR ?>/utilisateurs/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
         <?php else: ?>
-            <a type="button" class="btn btn-primary" href="<?= BASE_DIR ?>/users/login">Se connecter</a>
+            <a type="button" class="btn btn-primary" href="<?= BASE_DIR ?>/utilisateurs/login">Se connecter</a>
         <?php endif; ?>
         <a class="pannier ico_nav position-relative" href="<?= BASE_DIR ?>/paniers">
             <i class="fa fa-cart-shopping"></i>

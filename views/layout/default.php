@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="<?= BASE_DIR ?>/staticfiles/medias/Favicon.png">
 
     <title><?php
-        if ($_GET["p"] != ""){
-            echo ucfirst(str_replace("/", " - ", $_GET["p"])) . " | Samsung";
-        }
-        else
-            echo "Bienvenu sur Samsung"
+                if ($_GET["p"] != ""){
+                    echo ucfirst(str_replace("/", " - ", $_GET["p"])) . " | Samsung";
+                } else {
+                    echo "Bienvenu sur Samsung" ;
+                }
             ?>
     </title>
 
@@ -41,7 +41,10 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link <?php if($_GET["p"] == "articles") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/articles">Liste des articles</a>
+                    <a class="nav-link <?php if($_GET["p"] == "articles") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/articles">Boutique</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if($_GET["p"] == "main/about") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/main/about">A propos</a>
                 </li>
                 <?php if (isset($_SESSION['user']) && $_SESSION['user']["power"] == "admin"): ?>
                 <li class="nav-item">
@@ -79,7 +82,7 @@
     <ul class="nav justify-content-center pb-3 mb-3">
         <li class="nav-item"><a href="<?= BASE_DIR ?>/main/cgv" class="nav-link px-2 text-muted">CGV</a></li>
         <li class="nav-item"><a href="<?= BASE_DIR ?>/main/cgu" class="nav-link px-2 text-muted">CGU</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">A propos</a></li>
+        <li class="nav-item"><a href="<?= BASE_DIR ?>/main/about" class="nav-link px-2 text-muted">A propos</a></li>
     </ul>
     <p class="text-center text-muted">&copy;Copyright Phenixel <?php echo date("Y"); ?></p>
 </footer>

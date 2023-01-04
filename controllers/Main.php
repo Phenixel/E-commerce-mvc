@@ -19,4 +19,8 @@ class Main extends Controller{
     public function cgu(){
         $this->render('cgu');
     }
+
+    public function about(){
+        $this->render('about');
+    }
 }

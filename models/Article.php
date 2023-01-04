@@ -24,7 +24,7 @@ class Article extends Model{
 
     public function getThreeArticles(){
         $this->getConnection();
-        $stmt = $this->_connexion->prepare("SELECT * FROM article LIMIT 3");
+        $stmt = $this->_connexion->prepare("SELECT * FROM ". $this->table ." LIMIT 3");
         $stmt->execute();
 
         return $stmt->fetch(PDO::FETCH_ASSOC);

@@ -12,7 +12,7 @@ class Panier extends Model{
         $idsString = implode(',', $ids);
 
         $this->getConnection();
-        $stmt = $this->_connexion->prepare("SELECT * FROM article WHERE id IN (". $idsString .")");
+        $stmt = $this->_connexion->prepare("SELECT * FROM ". $this->table ." WHERE id IN (". $idsString .")");
 //        $stmt = $this->_connexion->prepare('SELECT * FROM article WHERE id IN (:idsString)');
 //        $stmt->bindValue(':idsString', $idsString, PDO::PARAM_STR);
         $stmt->execute();

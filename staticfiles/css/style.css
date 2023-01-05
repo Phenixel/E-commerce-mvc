@@ -132,6 +132,23 @@ body{
     justify-content: center;
 }
 
+.content-shortDesc{
+    min-height: 60px;
+}
+
+.affiche-categorie{
+    transition: 0.5s;
+}
+.affiche-categorie:hover{
+    transition: 0.5s;
+    box-shadow: rgba(169, 169, 169, 0.5) 0 0 10px 3px;
+    padding: 10px;
+    border-radius: 10px;
+    transform: scale(1.05);
+    background-color: white;
+    cursor: pointer;
+}
+
 .card{
     margin: 30px;
     transition: 0.3s;

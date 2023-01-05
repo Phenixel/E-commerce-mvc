@@ -22,6 +22,15 @@ class Article extends Model{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getArticleWithCategorie(){
+        $this->getConnection();
+
+        $stmt = $this->_connexion->prepare("SELECT a.id, a.slug, a.nom, a.content, a.description, a.images, a.prix, c.nom as categorie, c.id as idCat FROM article as a INNER JOIN categorie as c ON a.idCategorie = c.id");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getThreeArticles(){
         $this->getConnection();
         $stmt = $this->_connexion->prepare("SELECT * FROM ". $this->table ." LIMIT 3");

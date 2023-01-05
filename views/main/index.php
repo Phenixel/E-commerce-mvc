@@ -47,8 +47,37 @@
         </video>
         <h3 class="video-overlay h3-lst_articles">Découvrez nos articles <br> directement dans <br> notre boutique</h3>
     </div>
-    <div class="content-index">
-        <a href="<?= BASE_DIR ?>/articles" type="button" class="btn btn-primary m-5">Allez à la boutique</a>
-    </div>
 
+    <div class="container">
+        <div class="row row-cols-auto" style="justify-content: center;">
+            <?php foreach($articles as $article): ?>
+                <div class="col">
+                    <a href="<?= BASE_DIR ?>/articles/details/<?= $article['slug'] ?>" style="text-decoration: none; color: black">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="<?= $article['images'] ?>" alt="<?= $article['nom'] ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $article['nom'] ?></h5>
+                                <p class="card-text content-shortDesc">
+                                    <?php
+                                    $maxLength = 60;
+                                    if (strlen($article['content']) > $maxLength) {
+                                        $lastSpace = strrpos(substr($article['content'], 0, $maxLength), ' ');
+                                        $truncatedString = substr($article['content'], 0, $lastSpace);
+                                        echo $truncatedString . '...';
+                                    } else {
+                                        echo $article['content'];
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <a href="categories/boutique/<?= $article['idCat'] ?>" style="text-decoration: none;"><li class="list-group-item affiche-categorie"><?= $article['categorie'] ?></li></a>
+                                <li class="list-group-item h6"><?= $article['prix'] ?>,00 €</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
 </main>

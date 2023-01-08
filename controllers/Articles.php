@@ -1,17 +1,21 @@
 <?php
 
 class Articles extends Controller{
-    /**
-     * Cette méthode affiche la liste des articles
-     *
-     * @return void
-     */
     public function index(){
         $this->loadModel('Article');
+        $this->loadModel('Categorie');
 
-        $articles = $this->Article->getAll();
+        if (isset($_POST['categoryId'])) {
+            // Si une catégorie est sélectionnée, affichez uniquement les articles de cette catégorie
+            $articles = $this->Article->getArticlesByCategoryId($_POST['categoryId']);
+        } else {
+            // Affichez tous les articles
+            $articles = $this->Article->getArticleWithCategorie();
+        }
 
-        $this->render('index', compact('articles'));
+        $categories = $this->Categorie->getAll();
+
+        $this->render('index', compact('articles', 'categories'));
     }
 
     /**

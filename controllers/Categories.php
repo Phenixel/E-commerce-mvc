@@ -23,6 +23,7 @@ class Categories extends Controller{
     public function boutique(int $id){
         $this->loadModel('Categorie');
         $categories = $this->Categorie->getArticleFromCategorie($id);
-        $this->render('boutique', compact('categories'));
+        $nameCategorie = $this->Categorie->getAll();
+        $this->render('boutique', compact('categories', 'nameCategorie'));
     }
 }

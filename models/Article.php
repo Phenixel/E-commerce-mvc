@@ -39,4 +39,13 @@ class Article extends Model{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getArticlesByCategoryId(int $categoryId) {
+        $this->getConnection();
+        $stmt = $this->_connexion->prepare("SELECT a.id, a.slug, a.nom, a.content, a.description, a.images, a.prix, c.nom as categorie, c.id as idCat FROM article as a INNER JOIN categorie as c ON a.idCategorie = c.id WHERE c.id = :categoryId");
+        $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

@@ -1,46 +1,32 @@
--- phpMyAdmin SQL Dump
--- version 5.1.3
--- https://www.phpmyadmin.net/
---
--- Hôte : db:3306
--- Généré le : jeu. 05 jan. 2023 à 17:42
--- Version du serveur : 5.7.37
--- Version de PHP : 8.0.15
+CREATE DATABASE samsung;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de données : `samsung`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `article`
---
+USE samsung;
 
 CREATE TABLE `article` (
-  `id` int(11) NOT NULL,
-  `slug` varchar(250) NOT NULL,
-  `nom` varchar(255) DEFAULT NULL,
-  `content` varchar(500) DEFAULT NULL,
-  `description` varchar(500) NOT NULL,
-  `images` varchar(250) NOT NULL,
-  `prix` int(11) NOT NULL,
-  `idCategorie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   `slug` varchar(250) NOT NULL,
+   `nom` varchar(255) DEFAULT NULL,
+   `content` varchar(500) DEFAULT NULL,
+   `description` varchar(500) NOT NULL,
+   `images` varchar(250) NOT NULL,
+   `prix` int(11) NOT NULL,
+   `idCategorie` int(11) NOT NULL
+);
 
---
--- Déchargement des données de la table `article`
---
+
+CREATE TABLE `categorie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nom` varchar(250) NOT NULL
+);
+
+
+CREATE TABLE `utilisateur` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `password` varchar(250) DEFAULT NULL,
+  `power` varchar(6) NOT NULL
+);
 
 INSERT INTO `article` (`id`, `slug`, `nom`, `content`, `description`, `images`, `prix`, `idCategorie`) VALUES
 (1, 'galaxy_flip', 'Galaxy flip', 'Bonjour je suis un super téléphone', 'Le Samsung Galaxy Flip est un smartphone pliable doté d\'un écran AMOLED de 6,7 pouces, d\'un processeur Qualcomm Snapdragon 865 et de 8 Go de RAM. Il possède un appareil photo principal de triple capteur de 12 mégapixels, ainsi qu\'un appareil photo avant de 10 mégapixels.', 'staticfiles/medias/articles/Galaxy_flip.webp', 1050, 1),
@@ -58,96 +44,13 @@ INSERT INTO `article` (`id`, `slug`, `nom`, `content`, `description`, `images`, 
 (13, 'galaxy_tab_s8', 'Galaxy Tab S8', 'Tablette tactile haut de gamme avec écran Super AMOLED de 12,4 pouces', 'Le Samsung Galaxy Tab S8 est une tablette haut de gamme dotée d\'un écran Super AMOLED de 12,4 pouces, d\'un processeur Snapdragon 870 et de 8 Go de RAM. Elle dispose également d\'une caméra arrière triple et d\'un lecteur d\'empreintes digitales intégré à l\'écran. Sa batterie de 9000 mAh offre une grande autonomie.', 'staticfiles/medias/articles/Galaxy_tab_S8.webp', 999, 2),
 (14, 'galaxy_book2_pro', 'Galaxy Book2 PRO', 'Un ordinateur portable polyvalent et performant pour votre travail et vos loisirs.', 'Le Samsung Galaxy Book2 PRO est un ordinateur portable performant doté d\'un écran AMOLED de 13,3 pouces, d\'un processeur Intel Core i5 et de 8 Go de RAM. Il dispose également d\'une batterie longue durée, d\'un clavier rétroéclairé et d\'un stylet intégré.', 'staticfiles/medias/articles/Galaxy_book_pro2.webp', 1699, 3);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `categorie`
---
-
-CREATE TABLE `categorie` (
-  `id` int(11) NOT NULL,
-  `nom` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `categorie`
---
-
 INSERT INTO `categorie` (`id`, `nom`) VALUES
 (1, 'Smartphone'),
 (2, 'Tablette'),
 (3, 'Galaxy Book'),
 (4, 'Montre');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `utilisateur`
---
-
-CREATE TABLE `utilisateur` (
-  `id` int(11) NOT NULL,
-  `name` varchar(250) DEFAULT NULL,
-  `email` varchar(250) DEFAULT NULL,
-  `password` varchar(250) DEFAULT NULL,
-  `power` varchar(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `utilisateur`
---
-
 INSERT INTO `utilisateur` (`id`, `name`, `email`, `password`, `power`) VALUES
 (1, 'phen', 'phen@phen.fr', 'Azerty123', 'admin'),
 (2, 'aaron', 'astico@wanadoo.fr', 'Azerty123', 'user'),
 (3, 'demo', 'demo@demo.fr', 'demo', 'user');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `article`
---
-ALTER TABLE `article`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idCategorie` (`idCategorie`);
-
---
--- Index pour la table `categorie`
---
-ALTER TABLE `categorie`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `article`
---
-ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT pour la table `categorie`
---
-ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -7,7 +7,14 @@
     </div>
 
     <div class="container">
-        <div class="row row-cols-auto" style="justify-content: center;">
+        <div class="text-center m-4">
+            <?php foreach($categories as $categorie): ?>
+                <a href="<?= BASE_DIR ?>/categories/boutique/<?= $categorie['id'] ?>" type="button" class="btn btn-primary category-button"><?= $categorie['nom'] ?></a>
+            <?php endforeach ?>
+        </div>
+
+        <div id="list-of-article" class="row row-cols-auto" style="justify-content: center;">
+            <!--      Liste des articles selon les catégories      -->
             <?php foreach($articles as $article): ?>
                 <div class="col">
                     <a href="<?= BASE_DIR ?>/articles/details/<?= $article['slug'] ?>" style="text-decoration: none; color: black">
@@ -15,7 +22,7 @@
                             <img class="card-img-top" src="<?= $article['images'] ?>" alt="<?= $article['nom'] ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $article['nom'] ?></h5>
-                                <p class="card-text">
+                                <p class="card-text content-shortDesc">
                                     <?php
                                     $maxLength = 60;
                                     if (strlen($article['content']) > $maxLength) {
@@ -27,10 +34,9 @@
                                     }
                                     ?>
                                 </p>
-
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><?= $article['prix'] ?>,00 €</li>
+                                <li class="list-group-item h6"><?= $article['prix'] ?>,00 €</li>
                             </ul>
                         </div>
                     </a>

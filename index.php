@@ -30,7 +30,6 @@ if($params[0] != ""){
         unset($params[0]);
         unset($params[1]);
         call_user_func_array([$controller,$action], $params);
-        $controller->$action();
     }else{
         http_response_code(404);
         require_once(ROOT.'controllers/Main.php');

@@ -71,7 +71,7 @@
                                 </p>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <a href="categories/boutique/<?= $article['idCat'] ?>" style="text-decoration: none;"><li class="list-group-item affiche-categorie"><?= $article['categorie'] ?></li></a>
+                                <a href="<?= BASE_DIR ?>/categories/boutique/<?= $article['idCat'] ?>" style="text-decoration: none;"><li class="list-group-item affiche-categorie"><?= $article['categorie'] ?></li></a>
                                 <li class="list-group-item h6"><?= $article['prix'] ?>,00 €</li>
                             </ul>
                         </div>

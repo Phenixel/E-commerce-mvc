@@ -1,7 +1,7 @@
 *{margin: 0;padding: 0}
 
 body{
-    background-image: linear-gradient(#fcfcfc, #edf4ff);
+    background-image: linear-gradient(#f6faff, #e8f0fd);
     min-height: 100vh;
 }
 
@@ -27,6 +27,61 @@ body{
     background-color: #f4f4f4;
     border-radius: 5px;
     box-shadow: rgba(169, 169, 169, 0.5) 0 0 10px 1px;
+}
+
+/* Général */
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #004da3;
+    color: white;
+    height: 100px;
+}
+
+.text-in-header{
+    text-align: center;
+}
+
+.text-in-header h6{
+    font-style: italic;
+}
+
+.close-ban{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+#close-ban-x{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.footer{
+    background-color: #00002d;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+}
+
+.active{
+    font-weight: bold;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* CGV CGU */
@@ -55,60 +110,6 @@ body{
     /*color: #c7c7c7;*/
     color: transparent;
     text-shadow: 0 0 8px #000;
-}
-
-/* Général */
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #004da3;
-    color: white;
-    height: 100px;
-}
-.text-in-header{
-    text-align: center;
-}
-.text-in-header h6{
-    font-style: italic;
-}
-.close-ban{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-}
-#close-ban-x{
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.footer{
-    background-color: #00002d;
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
-}
-
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 
 /* Accueil */
@@ -145,7 +146,9 @@ body{
     padding: 10px;
     border-radius: 10px;
     transform: scale(1.05);
-    background-color: white;
+    background-color: #004da3;
+    font-weight: bold;
+    color: white;
     cursor: pointer;
 }
 

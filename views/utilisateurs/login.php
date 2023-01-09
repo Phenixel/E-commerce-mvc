@@ -12,7 +12,7 @@
                 <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Entrez votre mot de passe">
                 <div class="input-group-append">
                     <div class="input-group-text">
-                        <a href="#" class="password-toggle" data-toggle="password-toggle"><i class="far fa-eye"></i></a>
+                        <a class="password-toggle" data-toggle="password-toggle"><i class="far fa-eye"></i></a>
                     </div>
                 </div>
             </div>
@@ -26,3 +26,15 @@
     </form>
 
 </div>
+
+<script>
+    document.querySelector('.password-toggle').addEventListener('click', function(e) {
+        e.preventDefault();
+        var input = document.getElementById('inputPassword');
+        if (input.type === 'password') {
+            input.type = 'text';
+        } else {
+            input.type = 'password';
+        }
+    });
+</script>

@@ -29,17 +29,6 @@ $('.password-toggle').click(function() {
     }
 });
 
-document.querySelector('.password-toggle').addEventListener('click', function(e) {
-    e.preventDefault();
-    var input = document.getElementById('inputPassword');
-    if (input.type === 'password') {
-        input.type = 'text';
-    } else {
-        input.type = 'password';
-    }
-});
-
-
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 

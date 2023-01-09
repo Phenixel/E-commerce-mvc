@@ -31,9 +31,18 @@ abstract class Controller{
         $this->$model = new $model();
     }
 
+    /**
+     * Empêche l'accès aux pages réservés aux admins.
+     *
+     * @return void
+     */
     public function forAdmin(){
         if (empty($_SESSION['user']) || $_SESSION['user']["power"] != "admin"){
-            header("location:". BASE_DIR);
+            if (isset($_SERVER['HTTP_REFERER'])){
+                header("location:". $_SERVER['HTTP_REFERER']);
+            }else{
+                header("location:". BASE_DIR);
+            }
         }
     }
 }

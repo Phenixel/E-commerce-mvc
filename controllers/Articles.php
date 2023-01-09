@@ -5,14 +5,7 @@ class Articles extends Controller{
         $this->loadModel('Article');
         $this->loadModel('Categorie');
 
-        if (isset($_POST['categoryId'])) {
-            // Si une catégorie est sélectionnée, affichez uniquement les articles de cette catégorie
-            $articles = $this->Article->getArticlesByCategoryId($_POST['categoryId']);
-        } else {
-            // Affichez tous les articles
-            $articles = $this->Article->getArticleWithCategorie();
-        }
-
+        $articles = $this->Article->getArticleWithCategorie();
         $categories = $this->Categorie->getAll();
 
         $this->render('index', compact('articles', 'categories'));
@@ -51,5 +44,21 @@ class Articles extends Controller{
         } else {
             $this->render('add_article', compact('categories'));
         }
+    }
+
+    public function back_office(){
+        $this->forAdmin();
+        $this->loadModel("Article");
+
+        $articles = $this->Article->getArticleWithCategorie();
+
+        $this->render('back_office', compact('articles'));
+    }
+
+    public function delete(int $id){
+        $this->forAdmin();
+        $this->loadModel("Article");
+
+
     }
 }

@@ -23,7 +23,6 @@ if($params[0] != ""){
     $action = $params[1] ?? 'index';
 
     require_once(ROOT.'controllers/'.$controller.'.php');
-
     $controller = new $controller();
 
     if(method_exists($controller, $action)){
@@ -32,7 +31,7 @@ if($params[0] != ""){
         call_user_func_array([$controller,$action], $params);
     }else{
         http_response_code(404);
-        require_once(ROOT.'controllers/Main.php');
+        require_once(ROOT.'controllers/Error.php');
     }
 }else{
     require_once(ROOT.'controllers/Main.php');

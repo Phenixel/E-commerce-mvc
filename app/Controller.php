@@ -30,4 +30,10 @@ abstract class Controller{
         require_once(ROOT.'models/'.$model.'.php');
         $this->$model = new $model();
     }
+
+    public function forAdmin(){
+        if (empty($_SESSION['user']) || $_SESSION['user']["power"] != "admin"){
+            header("location:". BASE_DIR);
+        }
+    }
 }

@@ -7,10 +7,10 @@ class Utilisateurs extends Controller {
      * @return void
      */
     public function index(){
+        $this->forAdmin();
         $this->loadModel('Utilisateur');
 
         $users = $this->Utilisateur->getAll();
-
         $this->render('index', compact('users'));
     }
 

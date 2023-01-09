@@ -32,6 +32,12 @@ abstract class Model{
         }
     }
 
+    public function slugify($text)
+    {
+        $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $text);
+        return $slug;
+    }
+
     /**
      * Méthode permettant d'obtenir un enregistrement de la table choisie en fonction d'un id
      *

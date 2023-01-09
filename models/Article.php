@@ -48,4 +48,17 @@ class Article extends Model{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function addNewArticle(string $nom, string $content, string $description, string $image, int $prix, int $idCategorie){
+        $this->getConnection();
+        $stmt = $this->_connexion->prepare("INSERT INTO `article`(slug, nom, content, description, images, prix, idCategorie) VALUES (:slug, :nom, :content, :description, :images, :prix, :idCategorie)");
+        $stmt->bindValue(':slug', $this->slugify($nom), PDO::PARAM_STR);
+        $stmt->bindValue(':nom', $nom, PDO::PARAM_STR);
+        $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+        $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+        $stmt->bindValue(':images', $image, PDO::PARAM_STR);
+        $stmt->bindValue(':prix', $prix, PDO::PARAM_INT);
+        $stmt->bindValue(':idCategorie', $idCategorie, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
 }

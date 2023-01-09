@@ -47,8 +47,16 @@
                     <a class="nav-link <?php if($_GET["p"] == "main/about") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/main/about">A propos</a>
                 </li>
                 <?php if (isset($_SESSION['user']) && $_SESSION['user']["power"] == "admin"): ?>
-                <li class="nav-item">
-                    <a class="nav-link <?php if($_GET["p"] == "utilisateurs") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/utilisateurs">Liste des utilisateurs</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <?php if($_GET["p"] == "articles/ajouter_article" || $_GET["p"] == "utilisateurs") echo "active" ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Administration
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Interface d'administration</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <a class="dropdown-item <?php if($_GET["p"] == "articles/ajouter_article") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/articles/ajouter_article">Ajouter un article</a>
+                        <a class="dropdown-item <?php if($_GET["p"] == "utilisateurs") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/utilisateurs">Liste des utilisateurs</a>
+                    </ul>
                 </li>
                 <?php endif; ?>
             </ul>

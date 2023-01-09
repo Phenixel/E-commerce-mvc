@@ -5,6 +5,7 @@
     <hr>
 
     <div class="text-center m-4">
+        <a href="<?= BASE_DIR ?>/articles" type="button" class="btn btn-primary category-button">Liste des articles</a>
         <?php foreach($nameCategorie as $categorie): ?>
             <a href="<?= BASE_DIR ?>/categories/boutique/<?= $categorie['id'] ?>" type="button" class="btn btn-primary category-button"><?= $categorie['nom'] ?></a>
         <?php endforeach ?>

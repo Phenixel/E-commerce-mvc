@@ -28,10 +28,38 @@ $prixTotal = 0;
                     <p class="fw-bolder"><?= $article['prix'] * $_SESSION['cart'][$article['id']]["quantite"] ?>,00€</p>
                 </td>
                 <td>
-                    <button id="<?= $article['id'] ?>" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#idConfirmDelete"><i class="fa-solid fa-trash"></i></button>
+                    <button id="<?= $article['id'] ?>" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#idConfirmDelete<?= $article['id'] ?>"><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>
             <?php $prixTotal += $article['prix'] * $_SESSION['cart'][$article['id']]["quantite"] ?>
+
+            <!-- Confirmation -->
+            <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="idConfirmDelete<?= $article['id'] ?>" tabindex="-1" aria-labelledby="confirmDelete" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="confirmDelete">Confirmer la suppression ?</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="img-fluid" src="<?= BASE_DIR ?>/<?= $article['images'] ?>" alt="image article <?= $article['nom'] ?>">
+                                </div>
+                                <div class="col-md-6">
+                                    <h2 class="h2"><?= $article['nom'] ?></h2>
+                                    <h5>Quantité : <?= $_SESSION['cart'][$article['id']]["quantite"] ?></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-danger" onclick="location.href='<?= BASE_DIR ?>/paniers/delete/<?= $article['id'] ?>'">Confirmer <i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <?php endforeach ?>
         </tbody>
     </table>
@@ -50,31 +78,3 @@ $prixTotal = 0;
         </div>
     <?php endif; ?>
 </main>
-
-<!-- Confirmation -->
-<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="idConfirmDelete" tabindex="-1" aria-labelledby="confirmDelete" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="confirmDelete">Confirmer la suppression ?</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="<?= BASE_DIR ?>/<?= $article['images'] ?>" alt="image article <?= $article['nom'] ?>">
-                    </div>
-                    <div class="col-md-6">
-                        <h2 class="h2"><?= $article['nom'] ?></h2>
-                        <h5>Quantité : <?= $_SESSION['cart'][$article['id']]["quantite"] ?></h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='<?= BASE_DIR ?>/paniers/delete/<?= $article['id'] ?>'">Confirmer <i class="fa-regular fa-trash-can"></i></button>
-            </div>
-        </div>
-    </div>
-</div>

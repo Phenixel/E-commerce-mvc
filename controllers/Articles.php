@@ -59,6 +59,13 @@ class Articles extends Controller{
         $this->forAdmin();
         $this->loadModel("Article");
 
+        $deleteSuccess = $this->Article->deleteArticle($id);
+        if ($deleteSuccess) {
+            $_SESSION['success'] = "L'article a été supprimé avec succès.";
+        } else {
+            $_SESSION['error'] = "Une erreur s'est produite lors de la suppression de l'article.";
+        }
 
+        header("location:". BASE_DIR ."/articles/back_office");
     }
 }

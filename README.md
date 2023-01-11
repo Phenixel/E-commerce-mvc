@@ -13,7 +13,7 @@ Une version de la base de données est disponible à la racine du projet. Elle s
 
 # MCD
 
-![concepteur.png](concepteur.png)
+![concepteur.png](imagesReadme/concepteur.png)
 
 # Tester le projet
 
@@ -48,6 +48,45 @@ Ces noms d'images sont
 - staticfiles/medias/articles/TV_neo_oled.webp
 - staticfiles/medias/articles/TV_oled.webp
 
+# Fonctionnalités
+
+## Accueil
+- Liste des articles
+![img.png](imagesReadme/index.png)
+
+### Informations
+- Liste des informations
+![img.png](imagesReadme/informations.png)
+
+## Boutique
+- Liste des articles
+- Liens vers les catégories
+![img.png](imagesReadme/boutique.png)
+
+### Catégories
+- Page par catégorie
+![img.png](imagesReadme/categorie.png)
+
+## Panier
+- Nombre d'articles dans le panier
+- Supprimer un article du panier
+![img.png](imagesReadme/panier.png)
+
+## Signup / Login
+![img.png](imagesReadme/seconnecter.png)
+
+## Back office
+- Liste les articles
+- Ajouter un article
+- Modifié un article
+- Supprimer un article
+![img.png](imagesReadme/back_office.png)
+
+### Ajouter un article
+![img.png](imagesReadme/add.png)
+
+### Modifier un article
+![img.png](imagesReadme/modifier.png)
 
 # Mentions spéciales
 

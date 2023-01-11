@@ -32,7 +32,7 @@
             <label for="inputCategorie" class="text-right">Catégorie de l'article</label>
             <select class="form-control" id="inputCategorie" name="idCategorie">
                 <?php foreach ($categories as $categorie): ?>
-                    <option value="<?= $categorie["id"] ?>"><?= $categorie["nom"] ?></option>
+                    <option <?php if ($categorie["id"] == $article["idCategorie"]) echo "selected" ; ?> value="<?= $categorie["id"] ?>"><?= $categorie["nom"] ?></option>
                 <?php endforeach; ?>
             </select>
         </div>

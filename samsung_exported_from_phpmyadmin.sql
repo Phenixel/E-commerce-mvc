@@ -77,7 +77,8 @@ INSERT INTO `categorie` (`id`, `nom`) VALUES
 (1, 'Smartphone'),
 (2, 'Tablette'),
 (3, 'Galaxy Book'),
-(4, 'Montre');
+(4, 'Montre')
+(5, 'TV');
 
 -- --------------------------------------------------------
 

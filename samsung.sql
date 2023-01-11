@@ -48,7 +48,8 @@ INSERT INTO `categorie` (`id`, `nom`) VALUES
 (1, 'Smartphone'),
 (2, 'Tablette'),
 (3, 'Galaxy Book'),
-(4, 'Montre');
+(4, 'Montre'),
+(5, 'TV');
 
 INSERT INTO `utilisateur` (`id`, `name`, `email`, `password`, `power`) VALUES
 (1, 'phen', 'phen@phen.fr', 'Azerty123', 'admin'),

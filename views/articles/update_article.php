@@ -5,7 +5,7 @@
         <p class="p text-danger text-center"><?= $error ?></p>
     <?php endif; ?>
 
-    <form class="form mt-4" method="POST" action="<?= BASE_DIR ?>/articles/ajouter_article">
+    <form class="form mt-4" method="POST" action="<?= BASE_DIR ?>/articles/modifier_article/<?= $article["slug"] ?>">
         <div class="form-group mb-4">
             <label for="inputNom" class="text-right">Nom de l'article</label>
             <input value="<?= $article["nom"] ?>" required maxlength="250" type="text" class="form-control mt-2" id="inputNom" name="nomArticle" placeholder="Entrez le nom de l'article">
@@ -37,15 +37,15 @@
             </select>
         </div>
         <div class="d-flex">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#idAddArticle" class="btn btn-primary mt-4 ms-auto">Modifier l'article</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#idUpdateArticle" class="btn btn-primary mt-4 ms-auto">Modifier l'article</button>
         </div>
 
     <!-- Confirmation -->
-    <div class="modal fade" id="idAddArticle" tabindex="-1" aria-labelledby="addToBdd" aria-hidden="true">
+    <div class="modal fade" id="idUpdateArticle" tabindex="-1" aria-labelledby="updateBdd" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addToCart">Confirmer l'ajout de l'article ?</h1>
+                    <h1 class="modal-title fs-5" id="addToCart">Confirmer la modification de l'article ?</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 

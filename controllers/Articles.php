@@ -40,7 +40,7 @@ class Articles extends Controller{
             $idCategorie = $_POST['idCategorie'];
 
             $this->Article->addNewArticle($nom, $content, $description, $image, $prix, $idCategorie);
-            header("location:". BASE_DIR ."/articles");
+            header("location:". BASE_DIR ."/articles/back_office");
         } else {
             $this->render('add_article', compact('categories'));
         }

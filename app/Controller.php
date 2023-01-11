@@ -45,4 +45,14 @@ abstract class Controller{
             }
         }
     }
+
+    public function forConnected(){
+        if (empty($_SESSION['user']) || $_SESSION['user']["power"] != "user"){
+            if (isset($_SERVER['HTTP_REFERER'])){
+                header("location:". $_SERVER['HTTP_REFERER']);
+            }else{
+                header("location:". BASE_DIR);
+            }
+        }
+    }
 }

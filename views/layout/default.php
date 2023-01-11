@@ -67,6 +67,7 @@
             </button>
             <a class="user ico_nav" href="<?= BASE_DIR ?>/utilisateurs/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
         <?php else: ?>
+            <a type="button" class="btn btn-primary m-3" href="<?= BASE_DIR ?>/utilisateurs/signup">S'enregistrer</a>
             <a type="button" class="btn btn-primary" href="<?= BASE_DIR ?>/utilisateurs/login">Se connecter</a>
         <?php endif; ?>
         <a class="pannier ico_nav position-relative" href="<?= BASE_DIR ?>/paniers">

@@ -1,6 +1,7 @@
 <div class="content">
     <h1 class="display-1 h1 text-center">Back office</h1>
     <hr class="mb-5">
+    <a href="<?= BASE_DIR ?>/articles/ajouter_article" type="button" class="btn btn-primary category-button">Ajouter un article</a>
     <table class="table table-hover table-striped">
         <thead>
         <tr>

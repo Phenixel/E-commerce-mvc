@@ -1,10 +1,6 @@
 <div class="content p-5">
     <h1 class="h1 text-center">Ajouter un article</h1>
 
-    <?php if (isset($error)): ?>
-        <p class="p text-danger text-center"><?= $error ?></p>
-    <?php endif; ?>
-
     <form class="form mt-4" method="POST" action="<?= BASE_DIR ?>/articles/ajouter_article">
         <div class="form-group mb-4">
             <label for="inputNom" class="text-right">Nom de l'article</label>

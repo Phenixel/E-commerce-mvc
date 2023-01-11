@@ -53,4 +53,5 @@ INSERT INTO `categorie` (`id`, `nom`) VALUES
 INSERT INTO `utilisateur` (`id`, `name`, `email`, `password`, `power`) VALUES
 (1, 'phen', 'phen@phen.fr', 'Azerty123', 'admin'),
 (2, 'aaron', 'astico@wanadoo.fr', 'Azerty123', 'user'),
-(3, 'demo', 'demo@demo.fr', 'demo', 'user');
+(3, 'demo', 'demo@demo.fr', 'demo', 'user'),
+(4, 'admin', 'admin@admin.fr', 'admin', 'admin');

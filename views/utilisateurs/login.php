@@ -1,6 +1,10 @@
 <div class="content p-5" style="width: 40%">
     <h1 class="h1 text-center">Connectez-vous</h1>
 
+    <?php if (isset($error)): ?>
+        <p class="p text-danger text-center"><?= $error ?></p>
+    <?php endif; ?>
+
     <form class="form mt-4" method="POST" action="<?= BASE_DIR ?>/utilisateurs/login">
         <div class="form-group mb-4">
             <label for="inputEmail" class="text-right">Adresse email</label>

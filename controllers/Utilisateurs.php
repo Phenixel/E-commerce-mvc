@@ -53,6 +53,29 @@ class Utilisateurs extends Controller {
         }
     }
 
+    public function signup(){
+        $this->loadModel("Utilisateur");
+
+        if (isset($_POST['nomUser']) && isset($_POST['mailUser']) && isset($_POST['inputPassword'])) {
+            // Je vérifie si le mail existe déjà
+            if ($this->Utilisateur->ifEmailExist($_POST['mailUser']) == null){
+                // Tous les champs ont été remplis
+                $nom = $_POST['nomUser'];
+                $mail = $_POST['mailUser'];
+                $pwd = $_POST['inputPassword'];
+
+                $this->Utilisateur->createUser($nom, $mail, $pwd);
+                header("location:". BASE_DIR . "/utilisateurs/login");
+            }else{
+                $error = "Cette adresse mail est déjà enregistrée";
+                $this->render('add_user', compact('error'));
+            }
+        } else {
+            $error = "";
+            $this->render('add_user', compact('error'));
+        }
+    }
+
 
     public function logout(){
         unset($_SESSION['user']);

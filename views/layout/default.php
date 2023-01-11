@@ -48,11 +48,11 @@
                 </li>
                 <?php if (isset($_SESSION['user']) && $_SESSION['user']["power"] == "admin"): ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?php if($_GET["p"] == "articles/ajouter_article" || $_GET["p"] == "utilisateurs") echo "active" ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle <?php if($_GET["p"] == "articles/ajouter_article" || $_GET["p"] == "utilisateurs" || $_GET["p"] == "articles/back_office") echo "active" ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Administration
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item">Interface d'administration</a></li>
+                        <li><a class="dropdown-item <?php if($_GET["p"] == "articles/back_office") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/articles/back_office">Interface d'administration</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <a class="dropdown-item <?php if($_GET["p"] == "articles/ajouter_article") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/articles/ajouter_article">Ajouter un article</a>
                         <a class="dropdown-item <?php if($_GET["p"] == "utilisateurs") echo "active" ?>" aria-current="page" href="<?= BASE_DIR ?>/utilisateurs">Liste des utilisateurs</a>

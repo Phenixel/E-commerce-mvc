@@ -61,6 +61,20 @@ class Article extends Model{
         $stmt->execute();
     }
 
+    public function updateArticle(int $id, string $nom, string $content, string $description, string $image, int $prix, int $idCategorie){
+        $this->getConnection();
+        $stmt = $this->_connexion->prepare("UPDATE ". $this->table ." SET slug = :slug, nom = :nom, content = :content, description = :description, images = :images, prix = :prix, idCategorie = :idCategorie WHERE id = :id");
+        $stmt->bindValue(':id', $nom, PDO::PARAM_INT);
+        $stmt->bindValue(':slug', $this->slugify($nom), PDO::PARAM_STR);
+        $stmt->bindValue(':nom', $nom, PDO::PARAM_STR);
+        $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+        $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+        $stmt->bindValue(':images', $image, PDO::PARAM_STR);
+        $stmt->bindValue(':prix', $prix, PDO::PARAM_INT);
+        $stmt->bindValue(':idCategorie', $idCategorie, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
     public function deleteArticle(int $id) {
         $this->getConnection();
         $stmt = $this->_connexion->prepare("DELETE FROM ". $this->table ." WHERE id = :id");

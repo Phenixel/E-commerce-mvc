@@ -28,7 +28,7 @@
                     <p><?= $article['prix'] ?>,00 €</p>
                 </td>
                 <td style="width: 15%">
-                    <button id="<?= $article['id'] ?>" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#idModified"><i class="fa-solid fa-pen"></i></button>
+                    <button id="<?= $article['id'] ?>" type="button" class="btn btn-warning" onclick="location.href='<?= BASE_DIR . "/articles/modifier_article/" . $article['slug'] ?>'"><i class="fa-solid fa-pen"></i></button>
                     <button id="<?= $article['id'] ?>" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#idConfirmDelete<?= $article['id'] ?>"><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>

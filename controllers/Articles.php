@@ -46,6 +46,30 @@ class Articles extends Controller{
         }
     }
 
+    public function modifier_article($slug){
+        $this->forAdmin();
+        $this->loadModel("Article");
+        $this->loadModel("Categorie");
+
+        $categories = $this->Categorie->getAll();
+        $article = $this->Article->findBySlug($slug);
+
+        if (isset($_POST['nomArticle']) && isset($_POST['contentArticle']) && isset($_POST['descArticle']) && isset($_POST['imageArticle']) && isset($_POST['prixArticle']) && isset($_POST['idCategorie'])) {
+            // Tous les champs ont été remplis
+            $nom = $_POST['nomArticle'];
+            $content = $_POST['contentArticle'];
+            $description = $_POST['descArticle'];
+            $image = $_POST['imageArticle'];
+            $prix = $_POST['prixArticle'];
+            $idCategorie = $_POST['idCategorie'];
+
+            $this->Article->updateArticle($article["id"], $nom, $content, $description, $image, $prix, $idCategorie);
+            header("location:". BASE_DIR ."/articles/back_office");
+        } else {
+            $this->render('update_article', compact('categories', 'article'));
+        }
+    }
+
     public function back_office(){
         $this->forAdmin();
         $this->loadModel("Article");

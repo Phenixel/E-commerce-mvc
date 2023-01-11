@@ -17,7 +17,6 @@ class Paniers extends Controller {
     }
 
     public function checkout(){
-        $this->forConnected();
         $this->loadModel('Panier');
 
         $check = $this->Panier->getCartArticles();

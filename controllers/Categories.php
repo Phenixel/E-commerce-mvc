@@ -17,7 +17,7 @@ class Categories extends Controller{
     /**
      * Méthode permettant d'afficher la page d'une categorie
      *
-     * @param string $nom
+     * @param int $id
      * @return void
      */
     public function boutique(int $id){

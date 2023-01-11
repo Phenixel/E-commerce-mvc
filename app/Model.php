@@ -16,7 +16,8 @@ abstract class Model{
      *
      * @return void
      */
-    public function getConnection(){
+    public function getConnection(): void
+    {
         $this->_connexion = null;
 
         $host = $this->host;
@@ -32,7 +33,13 @@ abstract class Model{
         }
     }
 
-    public function slugify($text)
+    /**
+     * Méthode permettant de simplifier le texte entré en paramétrés pour donner une version slugifier
+     *
+     * @param $text
+     * @return string
+     */
+    public function slugify($text): string
     {
         $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $text);
         return $slug;

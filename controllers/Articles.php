@@ -1,6 +1,11 @@
 <?php
 
 class Articles extends Controller{
+    /**
+     * Méthode permettant d'afficher la liste des articles
+     *
+     * @return void
+     */
     public function index(){
         $this->loadModel('Article');
         $this->loadModel('Categorie');
@@ -23,6 +28,11 @@ class Articles extends Controller{
         $this->render('details', compact('article'));
     }
 
+    /**
+     * Méthode permettant d'afficher la page d'ajout d'un article
+     *
+     * @return void
+     */
     public function ajouter_article(){
         $this->forAdmin();
         $this->loadModel("Article");
@@ -46,6 +56,12 @@ class Articles extends Controller{
         }
     }
 
+    /**
+     * Méthode permettant d'afficher un article pour le modifier à partir de son slug
+     *
+     * @param string $slug
+     * @return void
+     */
     public function modifier_article($slug){
         $this->forAdmin();
         $this->loadModel("Article");
@@ -70,6 +86,11 @@ class Articles extends Controller{
         }
     }
 
+    /**
+     * Méthode permettant d'afficher la page de back office
+     *
+     * @return void
+     */
     public function back_office(){
         $this->forAdmin();
         $this->loadModel("Article");
@@ -79,6 +100,12 @@ class Articles extends Controller{
         $this->render('back_office', compact('articles'));
     }
 
+    /**
+     * Méthode permettant de supprimer un article
+     *
+     * @param int $id
+     * @return void
+     */
     public function delete(int $id){
         $this->forAdmin();
         $this->loadModel("Article");

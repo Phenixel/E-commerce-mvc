@@ -46,8 +46,13 @@ abstract class Controller{
         }
     }
 
+    /**
+     * Empêche l'accès aux pages réservés aux connectés.
+     *
+     * @return void
+     */
     public function forConnected(){
-        if (empty($_SESSION['user']) || $_SESSION['user']["power"] != "user"){
+        if (empty($_SESSION['user'])){
             if (isset($_SERVER['HTTP_REFERER'])){
                 header("location:". $_SERVER['HTTP_REFERER']);
             }else{

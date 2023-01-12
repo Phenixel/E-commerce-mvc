@@ -1,13 +1,16 @@
 <div class="content">
 
-    <h1 class="h1 text-center"><?= $nameCategorie[str_replace("categories/boutique/", "", $_GET["p"]) - 1]["nom"] ?></h1>
+    <?php $idCateg =  $nameCategorie[str_replace("categories/boutique/", "", $_GET["p"]) - 1]; ?>
+
+    <h1 class="h1 text-center"><?= $idCateg["nom"] ?></h1>
 
     <hr>
 
     <div class="text-center m-4">
         <a href="<?= BASE_DIR ?>/articles" type="button" class="btn btn-primary category-button">Liste des articles</a>
         <?php foreach($nameCategorie as $categorie): ?>
-            <a href="<?= BASE_DIR ?>/categories/boutique/<?= $categorie['id'] ?>" type="button" class="btn btn-primary category-button"><?= $categorie['nom'] ?></a>
+<!--            <a href="--><?php //= BASE_DIR ?><!--/categories/boutique/--><?php //= $categorie['id'] ?><!--" type="button" class="btn btn-primary category-button">--><?php //= $categorie['nom'] ?><!--</a>-->
+            <button <?php if ($idCateg["id"] == $categorie['id']) echo "disabled"; ?> onclick="location.href='<?= BASE_DIR ?>/categories/boutique/<?= $categorie['id'] ?>'" type="button" class="btn btn-primary category-button"><?= $categorie['nom'] ?></button>
         <?php endforeach ?>
     </div>
 
